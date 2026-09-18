@@ -105,24 +105,26 @@ Root README.md and the two instruction adapters—[CLAUDE.md](CLAUDE.md) and [.g
 
 <!-- A Delegation Decision Record without the name. From HW5 this becomes a formal DDR. -->
 
-**Tool and task delegated:** [Which parts a tool drafted: e.g. "Copilot drafted render() and the CSS."]
+**Tool and task delegated:** ChatGPT drafted the HTML
 
-**Why:** [The reason it made sense to delegate that part rather than write it.]
+**Why:** [I requested help translating the assignment
 
-**How it was checked:** [What you inspected, what you changed, what you caught. "Replaced innerHTML with textContent" is the kind of sentence that belongs here.]
+**How it was checked:** ChatGPT inspected the application for separated files
 
-**Observed result / evidence:** [What the checks actually showed; link the relevant verification row, code change, or other evidence. Do not invent a run.]
-
+**Observed result / evidence:** The scaffold checker passed
 If no AI assistance was used, say so and describe your independent check. Full Delegation Decision Records begin at HW5; this lightweight record is sufficient here.
 
-**Instruction discovery and compliance:** [Record the tool and mode, which instruction adapter it discovered, and the reference or diagnostic evidence. Separately report whether one generated change followed the applicable standards. If no live AI tool is available, write “not run” and record a manual standards review.]
-
-**Actual hours on this assignment (optional):** [A number, if you choose to report it. The amount or omission does not affect points; the AI-use record does.]
+**Instruction discovery and compliance:** ChatGPT explicitly read the canonical standards and instructions 
+**Actual hours on this assignment (optional):** 5
 
 ## Explain, Change, Verify
+The saveChecklists(nextChecklists) function takes the updated checklist and tries to save it in localStorage. It returns whether the save worked. The page updates the list and clears the form only after the save succeeds, so an unsuccessful save does not erase what the user entered.
 
-[Identify one function and explain its input, state changes, and output in your own words. Link a meaningful before/after code change, state its expected effect, and record the observed behavior and evidence. Explain why the change matters to your selected requirement. This paragraph is part of the existing README submission.]
+The starter app saved simple notes. This version saves a section name, a completion criterion, and an ID for each entry. That change supports F-01 by making users define what a completed section should include.
 
+ChatGPT tested the app locally and confirmed that a saved checklist stayed after refreshing. Adding ?failSave caused a save error while keeping the entered text and existing checklist visible. These results support AC-01, AC-03, and AC-04.
+
+I still need to check the app in Codespaces, record what happens, and add a link to the commit showing the changes.
 <!-- Things this README could also do, if they earn their place:
      - GitHub alerts:  > [!NOTE]  > [!WARNING]  > [!TIP]
      - Task lists:     - [x] done   - [ ] not yet
