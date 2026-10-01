@@ -1,6 +1,4 @@
-# PROJECT
 
-Status: ACTIVE.
 # PROJECT
 
 Status: ACTIVE
