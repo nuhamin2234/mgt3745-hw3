@@ -3,25 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meeting notes | MGT 3745 starter</title>
+  <title>Definition-of-done checklist | MGT 3745 HW3</title>
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
   <main>
-    <h1>Meeting notes</h1>
-    <p>Keep short notes in this browser. Use fictional, non-sensitive information.</p>
-    <form id="note-form" novalidate>
-      <label for="note-input">New note</label>
-      <p id="note-help">Enter 1–200 characters. Notes stay in this browser profile and site only.</p>
-      <input id="note-input" name="note" type="text" aria-describedby="note-help note-error" autocomplete="off">
-      <button type="submit">Save note</button>
-      <p id="note-error" role="alert"></p>
+    <h1>Definition-of-done checklist</h1>
+    <p>For each presentation section, write what "done" means. Use fictional, non-sensitive information. Sections stay in this browser profile and site only.</p>
+    <form id="checklist-form" novalidate>
+      <label for="section-input">Section name</label>
+      <input id="section-input" name="section" type="text" maxlength="80" autocomplete="off" aria-describedby="checklist-error">
+
+      <label for="criterion-input">Completion criterion</label>
+      <input id="criterion-input" name="criterion" type="text" maxlength="200" autocomplete="off" aria-describedby="checklist-error">
+
+      <button type="submit">Add section</button>
+      <p id="checklist-error" role="alert"></p>
     </form>
     <p id="save-status" role="status" aria-live="polite"></p>
-    <h2>Saved notes</h2>
-    <p id="empty-state">No saved notes yet.</p>
-    <ul id="note-list" aria-label="Saved notes"></ul>
+    <h2>Saved sections</h2>
+    <p id="empty-state">No sections yet. Add one with a criterion that says what "done" means.</p>
+    <ul id="checklist-list" aria-label="Saved sections"></ul>
   </main>
 </body>
 </html>
