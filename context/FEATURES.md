@@ -15,10 +15,6 @@ DEFERRED. See ADR-001 for the storage decision.
 ## Constraints
 ## Acceptance
 
-Keep your dated Kano hypotheses and selected feature. Use IDs to connect evidence, jobs, and criteria. Clearly distinguish the one-feature HW3 implementation from the larger product scope.
-
-## Verification
-
 | ID | Feature | Job | Criterion |
 |----|---------|-----|-----------|
 | AC-F01-1 | F-01 | JOB-01 | When a member creates a section, the system shall require at least one checkable completion criterion. |
@@ -30,5 +26,16 @@ Keep your dated Kano hypotheses and selected feature. Use IDs to connect evidenc
 | AC-F04-1 | F-04 | JOB-02 | When 24 hours remain before the internal-draft deadline, the system shall flag every section not marked Ready and identify its unmet criteria. |
 | AC-PR-1 | Readiness | JOB-02 | While any section is not Ready, the system shall prevent the project from being marked Combined draft ready. |
 | AC-RO-1 | Repair ownership | JOB-02 | If a proposed repair owner declines, then the system shall preserve the existing owner and record the decline. |
+
+## Verification
+
+| Criterion | Steps and input | Expected result | Observed result | Status | Evidence / commit |
+|-----------|-----------------|-----------------|-----------------|--------|-------------------|
+| AC-F01-1 | Submit section "Competitor pricing" with the criterion left empty | Not saved; error shown; list unchanged | | | |
+| AC-F01-1 | Submit "Competitor pricing" / "Cites 3 sources" | Saved with an ID and listed; form clears | | | |
+| AC-F01-3 | Save an entry, then reload | Entry still listed | | | |
+| AC-F01-4 | Open with `?failSave`, submit a valid entry | Error shown; typed text and list kept | | | |
+| AC-F01-2 | n/a (needs reviewer) | n/a | n/a | DEFERRED | Out of HW3 slice |
+| AC-F02-1 to AC-RO-1 | n/a | n/a | n/a | DEFERRED | Out of HW3 slice |
 
 Cover a normal action, relevant invalid input, and persistence or failure. Classify unselected requirements separately. Record actual outcomes; all-PASS is acceptable with evidence.
